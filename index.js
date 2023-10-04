@@ -1,6 +1,28 @@
 function isPalindrome(word) {
-  // Write your algorithm here
+  // Write your algorithm here function isPalindrome(str) {
+  // Convert the string to lowercase
+  word = word.toLowerCase();
+
+  // Initialize pointers for the start and end of the string
+  let left = 0;
+  let right = word.length - 1;
+
+  // Loop through the string, comparing characters from both ends inward
+  while (left < right) {
+    // If characters at the left and right pointers are different, it's not a palindrome
+    if (word[left] !== word[right]) {
+      return false;
+    }
+    // Move the pointers towards the center of the string
+    left++;
+    right--;
+  }
+
+  // If the loop completes without finding a mismatch, it's a palindrome
+  return true;
 }
+
+
 
 /* 
   Add your pseudocode here
